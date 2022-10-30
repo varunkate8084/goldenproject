@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link rel="stylesheet"  href="/static/Quiz.css">
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       $(document).ready(function(){
+       $('select').formSelect();
+       });
+   </script>
+    <meta charset="UTF-8">
+    <title>AdminLogIn</title>
+</head>
+<body>
+<form action="/checkadmin" method="post">{% csrf_token %}
+   <div class="maincontainer">
+       <div class="box1">
+           <div class="boxheading1">
+                <span class="headingtext">Admin LogIn</span>
+           </div>
+           <div class="input-field" style="margin-left:80px; margin-right:80px;">
+               <i class="material-icons prefix">account_circle</i>
+               <input required id="emailid" name="emailid" type="text" class="validate">
+               <label for="emailid">Admin Id</label>
+           </div>
+           <div class="input-field" style="margin-left:80px;margin-right:80px;">
+               <i class="material-icons prefix">lock</i>
+               <input required id="password" name="password" type="password" class="validate">
+               <label for="password">Password</label>
+           </div>
+            <center>
+                <button class="btn waves-effect waves-light btnstyle" type="submit" name="action">LogIn
+                </button>
+                <div class="msgstyle">{{message}}</div>
+            </center>
+       </div>
+   </div>
+</form>
+</body>
+</html>

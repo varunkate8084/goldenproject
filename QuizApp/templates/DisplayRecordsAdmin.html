@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/static/Quiz.css" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>List Of Students</title>
+</head>
+<body>
+<div class="maincontainer">
+    <div class="box" style="padding:20px;">
+        <div class="boxheading">
+            <span class="headingtext">Student List</span>
+        </div>
+<table class="striped">
+     <thead>
+          <tr>
+              <th>Student Id</th>
+              <th>Student Name</th>
+              <th>Student DOB</th>
+              <th>Student Contact</th>
+              <th>Student Email</th>
+              <th>Student Institute</th>
+              <th>Student Password</th>
+          </tr>
+     </thead>
+    <tbody>
+    {% for row in records %}
+    <tr>
+        <td>{{ row.cdid }}</td>
+        <td>{{ row.cdname }}</td>
+         <td>{{ row.cddob }}</td>
+         <td>{{ row.cdcontact }}</td>
+         <td>{{ row.cdmail }}</td>
+         <td>{{ row.cdinst }}</td>
+         <td>{{ row.cdpwd }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    </div>
+</div>
+</body>
+</html>
+
